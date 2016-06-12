@@ -1,0 +1,39 @@
+[user]
+        name = Michael Simacek
+        email = msimacek@redhat.com
+[branch]
+        autosetuprebase = always
+[color]
+        ui = true
+        status = auto
+        branch = auto
+[core]
+        editor = vim -c 0
+        excludesfile = /home/msimacek/.gitignore_global
+[alias]
+        ci = commit
+        cia = commit --amend --no-edit
+        pci = !pci
+        st = status
+        co = checkout
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        l = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        f = fetch
+        fa = fetch --all
+        nope = reset --hard
+[format]
+        pretty = fuller
+[push]
+        default = simple
+[init]
+        templatedir = /home/msimacek/.git_template/
+[sendemail]
+        suppresscc = all
+        confirm = always
+        smtpserver = smtp.corp.redhat.com
+        smtpserverport = 25
+[mergetool "mymeld"]
+    cmd = meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE --label old_sources --label merge --label new_sources
+[merge]
+    tool = mymeld
+    conflictstyle = diff3

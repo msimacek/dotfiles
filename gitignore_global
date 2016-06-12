@@ -1,0 +1,6 @@
+notes
+*.old
+local.sbt
+TODO
+.agignore
+.vimrc

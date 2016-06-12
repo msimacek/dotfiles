@@ -1,0 +1,275 @@
+" vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/closeb'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'vim-scripts/Cpp11-Syntax-Support'
+Bundle 'ciaranm/detectindent'
+Bundle 'othree/html5.vim'
+Bundle 'tmhedberg/matchit'
+Bundle 'hdima/python-syntax'
+Bundle 'luochen1990/rainbow'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/syntastic'
+" Bundle 'chase/vim-ansible-yaml'
+Bundle 'MicahElliott/Rocannon'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tikhomirov/vim-glsl'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'tpope/vim-surround'
+Bundle 'rking/ag.vim'
+Bundle 'tpope/vim-commentary'
+
+" TODO configure
+Bundle 'AndrewRadev/sideways.vim'
+Bundle 'mbbill/undotree'
+
+" generic
+set tabstop=8
+set softtabstop=4
+set expandtab
+set nu
+set shiftwidth=4
+set textwidth=79
+set modeline
+
+" disable autoreindenting when typing
+set indentkeys=
+
+" load project local settings
+set exrc
+set secure
+
+" make hjkl work on display lines instead of logical lines
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+" window navigation
+nnoremap h <C-w>h
+nnoremap j <C-w>j
+nnoremap k <C-w>k
+nnoremap l <C-w>l
+nnoremap w <C-w>q
+
+" yank to end of line
+nnoremap Y y$
+
+" syncs keyboard with system
+" suppresses yanking on selection, but enables it in command mode
+" set clipboard=unnamedplus,autoselectml
+
+" omni completion
+inoremap <C-@> <C-x><C-o>
+
+" disable F1
+nmap <F1> :ls<CR>
+imap <F1> <nop>
+
+" indent everything
+nnoremap <C-f> mygg=G`y
+
+" copy/paste
+nnoremap <C-c> "+yy
+vnoremap <C-c> "+y
+
+" select pasted text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" no highlight
+nnoremap <Space> :noh\|echo<CR>
+
+" surround word with S
+nnoremap S ysiw
+
+" display incomplete long lines
+set display=lastline
+
+" Remove trailing whitespace
+" autocmd BufWritePre * :%s/\s\+$//e
+
+" workaround for delay of certain commands, ie. `O`
+set ttimeoutlen=50
+" scroll with cursor
+set scrolloff=9
+
+" matching parens
+hi clear MatchParen
+hi MatchParen cterm=bold,underline
+
+" mouse for all modes
+set mouse=a
+
+" virtual cursor - can move past end of line
+set ve=all
+
+" Source .vimrc on write
+autocmd! bufwritepost .vimrc source %
+
+" paste mode (no autoindent)
+set pastetoggle=<F11>
+
+" airline
+set laststatus=2
+"let g:airline_theme="bubblegum"
+let g:airline_theme="understated"
+
+" sideways - movin function arguments
+nnoremap <leader>h :SidewaysLeft<cr>
+nnoremap <leader>l :SidewaysRight<cr>
+
+" syntax highlighting
+syntax on
+filetype plugin indent on
+
+" Do not indent public/protected/private in c++
+set cino+=g0
+
+
+" rainbow parentheses
+" au VimEnter * RainbowParenthesesActivate
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \       'separately': {
+            \               'xhtml': 0,
+            \               'html': 0,
+            \               'xml': 0,
+            \       }
+            \}
+
+
+" colors
+hi clear Search
+hi clear Todo
+hi Search ctermbg=16
+hi Todo ctermfg=2 cterm=bold
+hi Folded ctermbg=53 ctermfg=15
+hi FoldColumn ctermbg=53 ctermfg=15
+hi Pmenu ctermbg=22 ctermfg=15
+hi PmenuSbar ctermbg=0
+hi PmenuSel ctermbg=0 ctermfg=28 cterm=bold
+hi PmenuThumb ctermbg=34
+hi Constant ctermfg=142
+hi Special ctermfg=1
+
+" signature
+hi SignColumn ctermbg=0
+let g:SignatureMarkOrder="\m>"
+let g:SignatureMarkTextHL="Todo"
+let g:SignatureMarkerTextHL="SyntasticError"
+
+" blink when jumping among searched items
+hi SearchBlink ctermbg=15
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
+function! HLNext (blinktime)
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let ring = matchadd('SearchBlink', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
+" Highlight tabs and trailing whitespace
+exec "set listchars=tab:»»,trail:«,nbsp:⇔"
+set list
+
+" Save *.swp files in ~/.vimswp
+set dir=~/.vimswp//
+set undofile
+set undodir=~/.vimswp//
+
+" syntactic checking
+let g:syntastic_error_symbol='▶▶'
+let g:syntastic_warnign_symbol='▷▷'
+let g:syntastic_check_on_open = 0
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_auto_refresh_includes = 1
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+
+" TODO solve java checker hang
+let g:syntastic_java_checkers = []
+
+" Python specific
+let g:syntastic_python_checkers = ['pylint', 'pep8']
+let python_highlight_all = 1
+let g:jedi#popup_on_dot = 0
+
+" insert time
+nnoremap <F5> i<C-R>=strftime("%T")<CR><ESC>l
+inoremap <F5> <C-R>=strftime("%T")<CR>
+
+nnoremap <F4> i<C-R>=strftime("%F")<CR><ESC>l
+inoremap <F4> <C-R>=strftime("%F")<CR>
+
+nnoremap <C-E> :%Eval<CR>
+
+" customize autocomplete
+set completeopt=longest,menuone,preview
+
+au BufNewFile *.spec 0r! ~/.vim/newspec.sh "%"
+au BufNewFile *.spec $d
+
+au BufRead,BufNewFile *.spec
+    \ setlocal comments-=:% commentstring=#%s
+
+" do not continue comments, but format them
+au BufRead,BufNewFile * setlocal formatoptions=qn1j
+au FileType c,cpp setlocal comments-=:// comments+=f:// formatoptions+=c
+au FileType python setlocal indentkeys-=<:>
+
+autocmd BufRead,BufNewFile *.tex
+    \ setlocal filetype=tex wrap formatoptions+=tc indentkeys=
+
+" asciidoc highlighting, indent, width
+" autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
+"             \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
+"             \ textwidth=72 wrap formatoptions+=tc
+"             \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+\\\\|^\\s*\\*\\+\\s\\+
+"             \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+
+" autoclose fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+au BufRead,BufNewFile *.yml setlocal filetype=ansible nofoldenable  background=dark
+
+" ag
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" NEDRTree
+nnoremap <F2> :NERDTree<CR>
+
+" highlight last column
+set cc=+1
+hi ColorColumn ctermbg=238
+
+" custom commands
+command! -range MakeSubpackage <line1>,<line2>s/^\s*\(.*\)/%package \1\rSummary:
+            \        \1 module for %{name}\r\r\
+            \%description \1\r\1 module for %{name}.\r/ |noh
