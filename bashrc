@@ -12,7 +12,7 @@ shopt -s globstar
 shopt -s histappend
 
 # my bin
-PATH="$HOME/bin:${PATH}"
+PATH="$HOME/bin:$HOME/git/my-scripts:${PATH}"
 export PYTHONPATH="$HOME/lib:$HOME/koschei:$HOME/javapackages/java-utils:$HOME/javapackages/python:$PYTHONPATH"
 export KOSCHEI_CONFIG="$HOME/koschei/config.cfg.template:$HOME/koschei/aux/test-config.cfg:$HOME/koschei/config.cfg"
 export DE="mate" # for xdg-open
