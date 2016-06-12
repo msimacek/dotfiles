@@ -77,6 +77,9 @@ inoremap <C-@> <C-x><C-o>
 nmap <F1> :ls<CR>
 imap <F1> <nop>
 
+" unmap ex mode
+nmap Q <nop>
+
 " indent everything
 nnoremap <C-f> mygg=G`y
 
