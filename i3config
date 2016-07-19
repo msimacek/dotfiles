@@ -189,7 +189,7 @@ bindsym $mod+x move workspace to output right
 bar {
         position top
         status_command i3status
-        tray_output LVDS1
+        tray_output primary
 }
 
 client.focused          #285577 #285577 #ffffff #2e9ef4
@@ -248,5 +248,6 @@ exec --no-startup-id ibus-daemon --xim -d
 #exec --no-startup-id /home/msimacek/bin/batt-watcher
 exec --no-startup-id urxvt256cd -q
 exec --no-startup-id /home/msimacek/bin/yubiswitch off
-exec --no-startup-id workrave
+# exec --no-startup-id workrave
 # exec --no-startup-id compton -b --vsync opengl --backend glx
+exec --no-startup-id pasystray
