@@ -12,9 +12,9 @@ shopt -s globstar
 shopt -s histappend
 
 # my bin
-PATH="$HOME/bin:$HOME/git/my-scripts:${PATH}"
-export PYTHONPATH="$HOME/lib:$HOME/koschei:$HOME/javapackages/java-utils:$HOME/javapackages/python:$PYTHONPATH"
-export KOSCHEI_CONFIG="$HOME/koschei/config.cfg.template:$HOME/koschei/aux/test-config.cfg:$HOME/koschei/config.cfg"
+PATH="$HOME/bin:$HOME/netbeans-8.1/bin:${PATH}"
+export PYTHONPATH="$HOME/lib:$HOME/git/koschei:$HOME/javapackages/java-utils:$HOME/javapackages/python:$PYTHONPATH"
+export KOSCHEI_CONFIG="$HOME/git/koschei/config.cfg.template:$HOME/git/koschei/aux/test-config.cfg:$HOME/git/koschei/config.cfg"
 export DE="mate" # for xdg-open
 export NAME="Michael Simacek"
 export FASNAME="msimacek"
