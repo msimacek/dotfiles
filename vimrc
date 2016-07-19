@@ -1,38 +1,43 @@
 " vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/closeb'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'vim-scripts/Cpp11-Syntax-Support'
-Bundle 'ciaranm/detectindent'
-Bundle 'othree/html5.vim'
-Bundle 'tmhedberg/matchit'
-Bundle 'hdima/python-syntax'
-Bundle 'luochen1990/rainbow'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/syntastic'
-" Bundle 'chase/vim-ansible-yaml'
-Bundle 'MicahElliott/Rocannon'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tikhomirov/vim-glsl'
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'tpope/vim-surround'
-Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-commentary'
+Plugin 'gmarik/vundle'
+Plugin 'vim-scripts/closeb'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/Cpp11-Syntax-Support'
+Plugin 'ciaranm/detectindent'
+Plugin 'othree/html5.vim'
+Plugin 'tmhedberg/matchit'
+Plugin 'hdima/python-syntax'
+Plugin 'luochen1990/rainbow'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/syntastic'
+" Plugin 'chase/vim-ansible-yaml'
+" Plugin 'MicahElliott/Rocannon'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'tpope/vim-surround'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'fszymanski/vim-spec'
 
 " TODO configure
-Bundle 'AndrewRadev/sideways.vim'
-Bundle 'mbbill/undotree'
+Plugin 'AndrewRadev/sideways.vim'
+Plugin 'mbbill/undotree'
+
+call vundle#end()
+filetype plugin indent on
 
 " generic
 set tabstop=8
@@ -211,7 +216,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_java_checkers = []
 
 " Python specific
-let g:syntastic_python_checkers = ['pylint', 'pep8']
+let g:syntastic_python_checkers = ['pylint', 'pycodestyle']
 let python_highlight_all = 1
 let g:jedi#popup_on_dot = 0
 
@@ -267,6 +272,7 @@ endif
 
 " NEDRTree
 nnoremap <F2> :NERDTree<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 " highlight last column
 set cc=+1
