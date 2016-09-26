@@ -17,6 +17,7 @@ URxvt.termName: rxvt-unicode
 URxvt.fading: 15
 URxvr.meta8: false
 URxvt.print-pipe: "cat > /dev/null"
+URxvt.loginShell:  true
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
