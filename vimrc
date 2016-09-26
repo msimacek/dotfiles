@@ -246,6 +246,9 @@ au FileType python setlocal indentkeys-=<:>
 autocmd BufRead,BufNewFile *.tex
     \ setlocal filetype=tex wrap formatoptions+=tc indentkeys=
 
+autocmd BufRead,BufNewFile *.rb
+    \ setlocal sw=2
+
 " asciidoc highlighting, indent, width
 " autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
 "             \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
