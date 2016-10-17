@@ -232,9 +232,6 @@ nnoremap <C-E> :%Eval<CR>
 " customize autocomplete
 set completeopt=longest,menuone,preview
 
-au BufNewFile *.spec 0r! ~/.vim/newspec.sh "%"
-au BufNewFile *.spec $d
-
 au BufRead,BufNewFile *.spec
     \ setlocal comments-=:% commentstring=#%s
 
@@ -260,6 +257,7 @@ autocmd BufRead,BufNewFile *.rb
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 au BufRead,BufNewFile *.yml setlocal filetype=ansible nofoldenable  background=dark
+au BufRead,BufNewFile *.xml setlocal sw=2
 
 " ag
 if executable('ag')
