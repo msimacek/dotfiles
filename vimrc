@@ -31,6 +31,9 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'fszymanski/vim-spec'
 
+" theme
+Plugin 'freeo/vim-kalisi'
+
 " TODO configure
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'mbbill/undotree'
@@ -49,6 +52,10 @@ set shiftwidth=4
 set textwidth=79
 set modeline
 set noincsearch
+
+colorscheme kalisi
+set background=dark
+set t_Co=256
 
 " disable autoreindenting when typing
 set indentkeys=
@@ -175,20 +182,20 @@ hi clear Search
 hi clear Todo
 hi Search ctermbg=16
 hi Todo ctermfg=2 cterm=bold
-hi Folded ctermbg=53 ctermfg=15
-hi FoldColumn ctermbg=53 ctermfg=15
+" hi Folded ctermbg=53 ctermfg=15
+" hi FoldColumn ctermbg=53 ctermfg=15
 hi Pmenu ctermbg=22 ctermfg=15
 hi PmenuSbar ctermbg=0
 hi PmenuSel ctermbg=0 ctermfg=28 cterm=bold
 hi PmenuThumb ctermbg=34
-hi Constant ctermfg=142
-hi Special ctermfg=1
+" hi Constant ctermfg=142
+" hi Special ctermfg=1
 
 " signature
 hi SignColumn ctermbg=0
 let g:SignatureMarkOrder="\m>"
-let g:SignatureMarkTextHL="Todo"
-let g:SignatureMarkerTextHL="SyntasticError"
+" let g:SignatureMarkTextHL="Todo"
+" let g:SignatureMarkerTextHL="SyntasticError"
 
 " blink when jumping among searched items
 hi SearchBlink ctermbg=15
@@ -208,6 +215,7 @@ endfunction
 " Highlight tabs and trailing whitespace
 exec "set listchars=tab:»»,trail:«,nbsp:⇔"
 set list
+hi clear SpecialKey
 
 " Save *.swp files in ~/.vimswp
 set dir=~/.vimswp//
@@ -273,7 +281,7 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " highlight last column
 set cc=+1
-hi ColorColumn ctermbg=238
+hi ColorColumn ctermbg=239
 
 " custom commands
 command! -range MakeSubpackage <line1>,<line2>s/^\s*\(.*\)/%package \1\rSummary:
