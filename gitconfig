@@ -21,6 +21,7 @@
         f = fetch
         fa = fetch --all
         nope = reset --hard
+        pop = stash pop
 [format]
         pretty = fuller
 [push]
