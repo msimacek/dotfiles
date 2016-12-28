@@ -233,6 +233,7 @@ bindsym $mod+F7 exec --no-startup-id /home/msimacek/bin/connect-headphones.sh
 bindsym $mod+F8 exec --no-startup-id /home/msimacek/bin/disconnect-headphones.sh
 
 bindsym $mod+Pause exec --no-startup-id systemctl suspend
+bindsym $mod+Shift+Pause exec --no-startup-id systemctl hibernate
 
 #exec --no-startup-id xsetroot -solid '#004422'
 exec_always --no-startup-id sh ~/.fehbg
@@ -242,7 +243,7 @@ exec --no-startup-id pulseaudio -D
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
 #exec --no-startup-id xautolock -locker 'i3lock -d -c 000000'
-exec --no-startup-id xss-lock -- /home/msimacek/bin/i3lock -denc 000000
+exec --no-startup-id xss-lock -- /home/msimacek/bin/i3lock -nc 000000
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xkbset -a
