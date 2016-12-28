@@ -16,7 +16,6 @@ Plugin 'tmhedberg/matchit'
 Plugin 'hdima/python-syntax'
 Plugin 'luochen1990/rainbow'
 Plugin 'msanders/snipmate.vim'
-Plugin 'scrooloose/syntastic'
 " Plugin 'chase/vim-ansible-yaml'
 " Plugin 'MicahElliott/Rocannon'
 Plugin 'chase/vim-ansible-yaml'
@@ -36,6 +35,8 @@ Plugin 'fszymanski/vim-spec'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'mbbill/undotree'
 
+Plugin 'neomake/neomake'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -47,6 +48,7 @@ set nu
 set shiftwidth=4
 set textwidth=79
 set modeline
+set noincsearch
 
 " disable autoreindenting when typing
 set indentkeys=
@@ -122,9 +124,6 @@ set mouse=a
 " virtual cursor - can move past end of line
 set ve=all
 
-" Source .vimrc on write
-autocmd! bufwritepost .vimrc source %
-
 " paste mode (no autoindent)
 set pastetoggle=<F11>
 
@@ -140,6 +139,17 @@ nnoremap <leader>l :SidewaysRight<cr>
 " syntax highlighting
 syntax on
 filetype plugin indent on
+
+" neomake options
+au BufWritePost *.py Neomake
+au BufWritePost *.c Neomake
+au BufWritePost *.rb Neomake
+let g:neomake_warning_sign = {'text': '▶▶', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_error_sign = {'text': '▶▶', 'texthl': 'NeomakeErrorSign'}
+hi NeomakeErrorSign ctermfg=red ctermbg=0
+hi NeomakeWarningSign ctermfg=yellow ctermbg=0
+nnoremap - :lnext<cr>
+nnoremap _ :lprev<cr>
 
 " Do not indent public/protected/private in c++
 set cino+=g0
@@ -204,21 +214,7 @@ set dir=~/.vimswp//
 set undofile
 set undodir=~/.vimswp//
 
-" syntactic checking
-let g:syntastic_error_symbol='▶▶'
-let g:syntastic_warnign_symbol='▷▷'
-let g:syntastic_check_on_open = 0
-let g:syntastic_c_check_header = 1
-let g:syntastic_c_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-
-" TODO solve java checker hang
-let g:syntastic_java_checkers = []
-
-" Python specific
-let g:syntastic_python_checkers = ['pylint', 'pycodestyle']
 let python_highlight_all = 1
-let g:jedi#popup_on_dot = 0
 
 " insert time
 nnoremap <F5> i<C-R>=strftime("%T")<CR><ESC>l
