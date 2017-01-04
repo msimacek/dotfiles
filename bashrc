@@ -22,6 +22,7 @@ export EMAIL="msimacek@redhat.com"
 export RPM_PACKAGER="$NAME <$EMAIL>"
 export EDITOR="vim"
 export VISUAL="vim"
+export PYTHONDONTWRITEBYTECODE=1
 
 alias xcd='sleep 2 && cd `xcwd`'
 alias gco='git checkout'
