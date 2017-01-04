@@ -37,6 +37,8 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
+alias rkinit='kinit msimacek@REDHAT.COM'
+alias fkinit='kinit msimacek@FEDORAPROJECT.ORG'
 
 gs() {
     if [ "$#" -gt 0 ]; then
