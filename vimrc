@@ -243,12 +243,10 @@ au BufRead,BufNewFile *.spec
 au BufRead,BufNewFile * setlocal formatoptions=qn1j
 au FileType c,cpp setlocal comments-=:// comments+=f:// formatoptions+=c
 au FileType python setlocal indentkeys-=<:>
+au FileType ruby,eruby setlocal sw=2
 
 autocmd BufRead,BufNewFile *.tex
     \ setlocal filetype=tex wrap formatoptions+=tc indentkeys=
-
-autocmd BufRead,BufNewFile *.rb
-    \ setlocal sw=2
 
 " asciidoc highlighting, indent, width
 " autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
