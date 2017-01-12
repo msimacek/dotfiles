@@ -213,7 +213,6 @@ workspace 10 output HDMI3
 workspace e output HDMI3
 workspace i output LVDS1
 
-bindsym $mod+y exec --no-startup-id xrandr --output HDMI3 --auto --pos 1600x-180
 bindsym $mod+t exec --no-startup-id xrandr --output HDMI3 --auto --same-as LVDS1
 bindsym $mod+a exec --no-startup-id /home/msimacek/bin/autorandr -c
 
