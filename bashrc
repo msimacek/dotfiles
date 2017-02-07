@@ -25,6 +25,7 @@ export VISUAL="vim"
 export PYTHONDONTWRITEBYTECODE=1
 
 alias xcd='sleep 2 && cd `xcwd`'
+alias xf='rpmdev-extract'
 alias gco='git checkout'
 __git_complete gco _git_checkout
 alias ll='ls -hla'
