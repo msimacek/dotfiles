@@ -12,7 +12,7 @@ shopt -s globstar
 shopt -s histappend
 
 # my bin
-PATH="$HOME/bin:$HOME/netbeans-8.1/bin:$HOME/activator-dist-1.3.10/bin:${PATH}"
+PATH="$HOME/bin:${PATH}"
 export PYTHONPATH="$HOME/lib:$HOME/git/koschei:$HOME/javapackages/java-utils:$HOME/javapackages/python:$PYTHONPATH"
 export KOSCHEI_CONFIG="$HOME/git/koschei/config.cfg.template:$HOME/git/koschei/aux/test-config.cfg:$HOME/git/koschei/config.cfg"
 export DE="mate" # for xdg-open
