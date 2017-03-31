@@ -17,7 +17,3 @@
     [ "%{buildarch}" = "noarch" ] || QA_CHECK_RPATHS=1 ; \
     case "${QA_CHECK_RPATHS:-}" in [1yY]*) /usr/lib/rpm/check-rpaths ;; esac \
     /usr/lib/rpm/check-buildroot
-%scl_prefix_maven maven30
-%scl_maven maven30
-%scl_prefix_java_common rh-java-common-
-%scl_java_common rh-java-common
