@@ -152,6 +152,7 @@ au BufWritePost *.c Neomake
 au BufWritePost *.rb Neomake
 let g:neomake_warning_sign = {'text': '▶▶', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_error_sign = {'text': '▶▶', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_pep8_args = ['--max-line-length=90']
 hi NeomakeErrorSign ctermfg=red ctermbg=0
 hi NeomakeWarningSign ctermfg=yellow ctermbg=0
 nnoremap - :lnext<cr>
@@ -259,7 +260,7 @@ autocmd BufRead,BufNewFile *.rb
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-au BufRead,BufNewFile *.yml setlocal filetype=ansible nofoldenable  background=dark
+au BufRead,BufNewFile *.yml setlocal filetype=ansible indentexpr= nofoldenable
 au BufRead,BufNewFile *.xml setlocal sw=2
 
 " ag
