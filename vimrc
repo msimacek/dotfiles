@@ -28,7 +28,6 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'tpope/vim-surround'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'fszymanski/vim-spec'
 
 " theme
 Plugin 'freeo/vim-kalisi'
