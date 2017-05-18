@@ -154,8 +154,11 @@ let g:neomake_error_sign = {'text': '▶▶', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_pep8_args = ['--max-line-length=90']
 hi NeomakeErrorSign ctermfg=red ctermbg=0
 hi NeomakeWarningSign ctermfg=yellow ctermbg=0
-nnoremap - :lnext<cr>
-nnoremap _ :lprev<cr>
+
+command! Lnext try | lnext | catch | lfirst | catch | endtry
+command! Lprev try | lprev | catch | llast | catch | endtry
+nnoremap - :Lnext<cr>
+nnoremap _ :Lprev<cr>
 
 " Do not indent public/protected/private in c++
 set cino+=g0
