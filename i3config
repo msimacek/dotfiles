@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -233,6 +234,13 @@ bindsym $mod+F8 exec --no-startup-id /home/msimacek/bin/disconnect-headphones.sh
 
 bindsym $mod+Pause exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Pause exec --no-startup-id systemctl hibernate
+
+# keyboard layout keybindings
+# get current engine with ibus engine
+bindsym $alt+F1 exec --no-startup-id ibus engine xkb:us::eng
+bindsym $alt+F2 exec --no-startup-id ibus engine kkc
+bindsym $alt+F3 exec --no-startup-id ibus engine xkb:cz:qwerty:cze
+bindsym $alt+F4 exec --no-startup-id ibus engine xkb:fi::fin
 
 #exec --no-startup-id xsetroot -solid '#004422'
 exec_always --no-startup-id sh ~/.fehbg
