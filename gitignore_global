@@ -4,3 +4,5 @@ local.sbt
 TODO
 .agignore
 .vimrc
+.mo-config
+chroot
