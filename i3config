@@ -223,10 +223,7 @@ bindsym $mod+F12 exec --no-startup-id yubiswitch off
 # screenshot
 bindsym $mod+Shift+Print exec scrot -q 100
 
-for_window [instance="audacious"] border none
-
-for_window [title="PV112 -"] floating enable
-for_window [title="YOLO"] floating enable
+for_window [class="^.*"] border normal
 
 # headphones
 bindsym $mod+F7 exec --no-startup-id /home/msimacek/bin/connect-headphones.sh
