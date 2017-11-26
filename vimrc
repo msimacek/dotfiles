@@ -275,7 +275,7 @@ nnoremap <F2> :NERDTree<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
 " highlight last column
-set cc=+1
+set cc=+1,+11
 hi ColorColumn ctermbg=239
 
 " custom commands
