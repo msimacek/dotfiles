@@ -5,4 +5,7 @@ TODO
 .agignore
 .vimrc
 .mo-config
+*.class
+*.pyc
 chroot
+nb-configuration.xml
