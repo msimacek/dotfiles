@@ -8,7 +8,6 @@ Plugin 'gmarik/vundle'
 Plugin 'vim-scripts/closeb'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/Cpp11-Syntax-Support'
 Plugin 'ciaranm/detectindent'
 Plugin 'othree/html5.vim'
@@ -267,13 +266,9 @@ au BufRead,BufNewFile *.xml setlocal sw=2
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
 endif
+
+nnoremap <C-p> :FZF<CR>
 
 " NEDRTree
 nnoremap <F2> :NERDTree<CR>
