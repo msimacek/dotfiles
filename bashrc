@@ -25,6 +25,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less -S"
 export PYTHONDONTWRITEBYTECODE=1
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
 alias xcd='sleep 2 && cd `xcwd`'
 alias xf='rpmdev-extract'
