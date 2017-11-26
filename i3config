@@ -20,7 +20,7 @@ set $alt Mod1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 9.5
-font xft:DejaVu Sans Mono 9.0
+font xft:DejaVu Sans Mono 9.5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

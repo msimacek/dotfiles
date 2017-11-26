@@ -1,4 +1,4 @@
-URxvt.font: xft:DejaVu Sans Mono:size=9
+URxvt.font: xft:DejaVu Sans Mono:size=9.5
 Xft.antialias: true
 Xft.hinting: true
 Xft.hintstyle: hintfull
