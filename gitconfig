@@ -17,7 +17,7 @@
         st = status
         co = checkout
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
-        l = log --graph --decorate --pretty=oneline --abbrev-commit --branches --tags
+        l = log --graph --decorate --pretty=oneline --abbrev-commit --branches --tags --remotes
         f = fetch
         fa = fetch --all
         nope = reset --hard
