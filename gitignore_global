@@ -9,3 +9,5 @@ TODO
 *.pyc
 chroot
 nb-configuration.xml
+nbproject
+build
