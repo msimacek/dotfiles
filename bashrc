@@ -44,6 +44,9 @@ alias ........='cd ../../../../../../..'
 alias rkinit='kinit msimacek@REDHAT.COM'
 alias fkinit='kinit msimacek@FEDORAPROJECT.ORG'
 
+alias anaconda2='export PATH="$HOME/tools/anaconda2/bin:$PATH"'
+alias anaconda3='export PATH="$HOME/tools/anaconda3/bin:$PATH"'
+
 gs() {
     if [ "$#" -gt 0 ]; then
         git show "$@"
