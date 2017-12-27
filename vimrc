@@ -264,7 +264,7 @@ autocmd BufRead,BufNewFile *.tex
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 au BufRead,BufNewFile *.yml setlocal filetype=ansible indentexpr= nofoldenable
-au BufRead,BufNewFile *.xml setlocal sw=2
+au BufRead,BufNewFile *.xml,*.html setlocal sw=2
 
 " ag
 if executable('ag')
