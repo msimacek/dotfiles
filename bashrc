@@ -47,6 +47,9 @@ alias fkinit='kinit msimacek@FEDORAPROJECT.ORG'
 alias anaconda2='export PATH="$HOME/tools/anaconda2/bin:$PATH"'
 alias anaconda3='export PATH="$HOME/tools/anaconda3/bin:$PATH"'
 
+alias kclang='/home/msimacek/llvm34/bin/clang -O0 -I/home/msimacek/git/klee/include -c -g -emit-llvm'
+alias kclangl='/home/msimacek/llvm34/bin/clang -O0 -I/home/msimacek/git/klee/include -S -emit-llvm'
+
 gs() {
     if [ "$#" -gt 0 ]; then
         git show "$@"
