@@ -224,6 +224,7 @@ bindsym $mod+F12 exec --no-startup-id yubiswitch off
 bindsym $mod+Shift+Print exec scrot -q 100
 
 for_window [class="^.*"] border normal
+for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
 
 # headphones
 bindsym $mod+F7 exec --no-startup-id /home/msimacek/bin/connect-headphones.sh
