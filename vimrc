@@ -155,6 +155,9 @@ let g:neomake_pep8_args = ['--max-line-length=90']
 hi NeomakeErrorSign ctermfg=red ctermbg=0
 hi NeomakeWarningSign ctermfg=yellow ctermbg=0
 
+" latex minted
+au filetype tex syntax region texZone start='\\begin{minted}' end='\\end{minted}'
+
 command! Lnext try | lnext | catch | lfirst | catch | endtry
 command! Lprev try | lprev | catch | llast | catch | endtry
 nnoremap - :Lnext<cr>
