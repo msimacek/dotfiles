@@ -2,7 +2,7 @@ notes
 *.old
 local.sbt
 TODO
-.agignore
+.ignore
 .vimrc
 .mo-config
 *.class
@@ -11,3 +11,7 @@ chroot
 nb-configuration.xml
 nbproject
 build
+*.rpm
+*.dbm*
+*.tar*
+*.zip
