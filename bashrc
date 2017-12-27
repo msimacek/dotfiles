@@ -23,7 +23,7 @@ export EMAIL="msimacek@redhat.com"
 export RPM_PACKAGER="$NAME <$EMAIL>"
 export EDITOR="vim"
 export VISUAL="vim"
-export PAGER="less -S"
+export PAGER="less -SR"
 export PYTHONDONTWRITEBYTECODE=1
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
