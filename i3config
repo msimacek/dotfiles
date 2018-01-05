@@ -26,7 +26,7 @@ font xft:DejaVu Sans Mono 9.5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256cc -cd "$(/home/msimacek/bin/i3cwd.py)"
+bindsym $mod+Return exec urxvt256cc -cd "$(i3cwd.py)"
 
 # kill focused window
 bindsym $mod+q kill
@@ -200,22 +200,20 @@ client.focused_inactive #5f676a #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #900000 #900000 #ffffff #900000
 
-workspace 1 output HDMI3
-workspace 2 output HDMI3
-workspace 3 output HDMI3
-workspace 4 output HDMI3
-workspace 5 output HDMI3
-workspace 6 output HDMI3
-workspace 7 output HDMI3
-workspace 8 output HDMI3
-workspace 8 output HDMI3
-workspace 9 output HDMI3
-workspace 10 output HDMI3
-workspace e output HDMI3
-workspace i output LVDS1
+workspace 1 output DP-3-2
+workspace 2 output DP-3-2
+workspace 3 output DP-3-2
+workspace 4 output DP-3-2
+workspace 5 output DP-3-2
+workspace 6 output DP-3-2
+workspace 7 output DP-3-2
+workspace 8 output DP-3-2
+workspace 8 output DP-3-2
+workspace 9 output DP-3-2
+workspace 10 output DP-3-2
+workspace e output DP-3-2
 
-bindsym $mod+t exec --no-startup-id xrandr --output HDMI3 --auto --same-as LVDS1
-bindsym $mod+a exec --no-startup-id /home/msimacek/bin/autorandr -c
+bindsym $mod+a exec --no-startup-id autorandr -c
 
 bindsym $mod+F11 exec --no-startup-id yubiswitch on
 bindsym $mod+F12 exec --no-startup-id yubiswitch off
@@ -225,10 +223,6 @@ bindsym $mod+Shift+Print exec scrot -q 100
 
 for_window [class="^.*"] border normal
 for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
-
-# headphones
-bindsym $mod+F7 exec --no-startup-id /home/msimacek/bin/connect-headphones.sh
-bindsym $mod+F8 exec --no-startup-id /home/msimacek/bin/disconnect-headphones.sh
 
 bindsym $mod+Pause exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Pause exec --no-startup-id systemctl hibernate
@@ -242,13 +236,13 @@ bindsym $alt+F4 exec --no-startup-id ibus engine xkb:fi::fin
 
 #exec --no-startup-id xsetroot -solid '#004422'
 # executes compton and sets background
-exec_always --no-startup-id /home/msimacek/bin/xrandr --auto
+exec_always --no-startup-id xrandr --auto
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio -D
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
-exec --no-startup-id xss-lock -- /home/msimacek/bin/i3lock -nc 000000
+exec --no-startup-id xss-lock -- i3lock -nc 000000
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xkbset -a

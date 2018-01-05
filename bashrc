@@ -12,8 +12,8 @@ shopt -s globstar
 shopt -s histappend
 
 # my bin
-export PATH="$HOME/bin:$PATH"
-export PYTHONPATH="$HOME/lib:$HOME/git/koschei:$HOME/javapackages/java-utils:$HOME/javapackages/python:$PYTHONPATH"
+export PATH="$HOME/bin:$HOME/git/my-scripts/bin:$PATH"
+export PYTHONPATH="$HOME/lib:$HOME/git/my-scripts/lib:$HOME/git/koschei:$PYTHONPATH"
 export KOSCHEI_CONFIG="$HOME/git/koschei/config.cfg.template:$HOME/git/koschei/aux/test-config.cfg:$HOME/git/koschei/config.cfg"
 export PGDATABASE=koschei
 export DE="mate" # for xdg-open
