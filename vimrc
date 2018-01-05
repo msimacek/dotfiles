@@ -151,7 +151,9 @@ au BufWritePost *.c Neomake
 au BufWritePost *.rb Neomake
 let g:neomake_warning_sign = {'text': '▶▶', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_error_sign = {'text': '▶▶', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_pep8_args = ['--max-line-length=90']
+let g:neomake_pycodestyle_args = ['--max-line-length=90']
+let g:neomake_python_exe = 'python3'
+let g:neomake_pylint_exe = 'pylint-3'
 hi NeomakeErrorSign ctermfg=red ctermbg=0
 hi NeomakeWarningSign ctermfg=yellow ctermbg=0
 
