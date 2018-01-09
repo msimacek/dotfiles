@@ -224,6 +224,7 @@ bindsym $mod+Shift+Print exec scrot -q 100
 
 for_window [class="^.*"] border normal
 for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
+for_window [title="Emoji Choice"] floating enable
 
 bindsym $mod+Pause exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Pause exec --no-startup-id systemctl hibernate
