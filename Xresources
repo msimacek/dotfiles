@@ -51,3 +51,5 @@ URxvt.matcher.button: 3
 *color13: #ad7fa8
 *color14: #00f5e9
 *color15: #eeeeec
+
+#include "/home/msimacek/.Xresources.local"
