@@ -214,7 +214,7 @@ workspace 9 output $primary
 workspace 10 output $primary
 workspace e output $primary
 
-bindsym $mod+a exec --no-startup-id autorandr -c
+bindsym $mod+a exec --no-startup-id randrctl auto
 
 bindsym $mod+F11 exec --no-startup-id yubiswitch on
 bindsym $mod+F12 exec --no-startup-id yubiswitch off
