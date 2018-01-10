@@ -146,7 +146,7 @@ syntax on
 filetype plugin indent on
 
 " neomake options
-au BufWritePost *.py Neomake
+au FileType python au! BufWritePost <buffer> Neomake
 au BufWritePost *.c Neomake
 au BufWritePost *.rb Neomake
 let g:neomake_warning_sign = {'text': '▶▶', 'texthl': 'NeomakeWarningSign'}
