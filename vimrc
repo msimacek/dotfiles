@@ -255,12 +255,11 @@ au FileType ruby,eruby setlocal sw=2
 autocmd BufRead,BufNewFile *.tex
     \ setlocal filetype=tex wrap formatoptions+=tc indentkeys=
 
-" asciidoc highlighting, indent, width
-" autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
-"             \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
-"             \ textwidth=72 wrap formatoptions+=tc
-"             \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+\\\\|^\\s*\\*\\+\\s\\+
-"             \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+" asciidoc highlighting, indent
+au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
+            \ shiftwidth=2 wrap formatoptions+=tc
+            \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+\\\\|^\\s*\\*\\+\\s\\+
+            \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
