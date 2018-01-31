@@ -28,6 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt256cc -cd "$(i3cwd.py)"
+bindsym $mod+Shift+Return exec bash -c 'cd "$(i3cwd.py)" && qgit'
 
 # kill focused window
 bindsym $mod+q kill
