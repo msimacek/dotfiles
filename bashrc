@@ -32,7 +32,6 @@ alias xf='rpmdev-extract'
 alias gco='git checkout'
 __git_complete gco _git_checkout
 alias ll='ls -hla'
-alias spec='if [ -f *.spec ]; then vim *.spec; else echo "No spec"; fi'
 alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
