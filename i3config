@@ -239,11 +239,11 @@ bindsym $alt+F4 exec --no-startup-id ibus engine xkb:fi::fin
 
 bindsym $mod+Insert mode "type"
 mode "type" {
-    bindsym --release e exec xdotool type --delay 100 --clearmodifiers 'el.simacek@gmail.com'; mode "default"
-    bindsym --release z exec xdotool type --delay 100 --clearmodifiers 'Záhumenice 36'; mode "default"
-    bindsym --release r exec xdotool type --delay 100 --clearmodifiers 'Rolnická 9'; mode "default"
-    bindsym --release m exec xdotool type --delay 100 --clearmodifiers 'Michael Šimáček'; mode "default"
-    bindsym --release s exec xdotool type --delay 100 --clearmodifiers 'Šimáček'; mode "default"
+    bindsym --release e exec xtype 'el.simacek@gmail.com'; mode "default"
+    bindsym --release z exec xtype 'Záhumenice 36'; mode "default"
+    bindsym --release r exec xtype 'Rolnická 9'; mode "default"
+    bindsym --release m exec xtype 'Michael Šimáček'; mode "default"
+    bindsym --release s exec xtype 'Šimáček'; mode "default"
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
