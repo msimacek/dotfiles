@@ -218,7 +218,7 @@ workspace e output $primary
 bindsym $mod+a exec --no-startup-id randrctl auto
 
 # screenshot
-bindsym $mod+Shift+Print exec scrot -q 100
+bindsym --release $mod+Shift+Print exec scrot -s
 
 for_window [class="^.*"] border normal
 #for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
