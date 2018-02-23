@@ -217,9 +217,6 @@ workspace e output $primary
 
 bindsym $mod+a exec --no-startup-id randrctl auto
 
-bindsym $mod+F11 exec --no-startup-id yubiswitch on
-bindsym $mod+F12 exec --no-startup-id yubiswitch off
-
 # screenshot
 bindsym $mod+Shift+Print exec scrot -q 100
 
