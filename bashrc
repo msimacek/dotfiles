@@ -8,6 +8,11 @@ fi
 . /usr/share/git-core/contrib/completion/git-prompt.sh
 . /usr/share/bash-completion/completions/git
 
+HISTSIZE=5000
+HISTFILESIZE=10000
+
+stty -ixon
+
 shopt -s globstar
 shopt -s histappend
 
