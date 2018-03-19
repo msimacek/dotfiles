@@ -3,6 +3,8 @@
         email = msimacek@redhat.com
 [branch]
         autosetuprebase = always
+[fetch]
+        prune = true
 [color]
         ui = true
         status = auto
