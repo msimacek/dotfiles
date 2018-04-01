@@ -50,6 +50,8 @@ set shiftwidth=4
 set textwidth=79
 set modeline
 set noincsearch
+" avoid 'french-spacing' - double space after full stop
+set nojoinspaces
 
 colorscheme kalisi
 set background=dark
