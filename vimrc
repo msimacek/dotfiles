@@ -108,7 +108,7 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <Space> :noh\|echo<CR>
 
 " surround word with S
-nnoremap S ysiw
+nmap S ysiw
 
 " display incomplete long lines
 set display=lastline
@@ -161,6 +161,9 @@ hi NeomakeWarningSign ctermfg=yellow ctermbg=0
 
 " latex minted
 au filetype tex syntax region texZone start='\\begin{minted}' end='\\end{minted}'
+" add surround vim rule binding y<text_object>c<command> to make tex command \comman{content}
+let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
+nmap <C-E> ysiwcemph<cr>
 
 command! Lnext try | lnext | catch | lfirst | catch | endtry
 command! Lprev try | lprev | catch | llast | catch | endtry
@@ -239,8 +242,6 @@ inoremap <F5> <C-R>=strftime("%T")<CR>
 
 nnoremap <F4> i<C-R>=strftime("%F")<CR><ESC>l
 inoremap <F4> <C-R>=strftime("%F")<CR>
-
-nnoremap <C-E> :%Eval<CR>
 
 " customize autocomplete
 set completeopt=longest,menuone,preview
