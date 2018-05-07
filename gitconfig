@@ -26,6 +26,7 @@
         pop = stash pop
         puf = push --force-with-lease
         ss = stash show -v
+        m = mergetool
 [format]
         pretty = fuller
 [push]
