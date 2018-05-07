@@ -38,6 +38,7 @@
         smtpserver = smtp.corp.redhat.com
         smtpserverport = 25
 [mergetool "meld"]
-    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --auto-merge
 [merge]
     tool = meld
+    conflictstyle = diff3
