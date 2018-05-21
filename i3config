@@ -96,7 +96,7 @@ bind $mod+20 workspace back_and_forth
 bindsym $mod+p focus parent
 
 # focus the child container
-bind $mod+52 focus child
+bind $mod+29 focus child
 
 # switch to workspace
 bind $mod+10 workspace number 1
@@ -188,6 +188,7 @@ bind $mod+Shift+156 exec --no-startup-id xbacklight -set 0
 bind $mod+156 exec --no-startup-id xbacklight -set 100
 
 bindsym $mod+x move workspace to output right
+bind $mod+52 move workspace to output left
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
