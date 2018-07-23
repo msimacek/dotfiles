@@ -240,7 +240,6 @@ bindsym $alt+F4 exec --no-startup-id ibus engine xkb:fi::fin
 exec_always --no-startup-id xrandr --auto
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
-exec --no-startup-id pulseaudio -D
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
 exec --no-startup-id xss-lock -- i3lock -nc 000000
