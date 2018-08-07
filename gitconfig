@@ -43,3 +43,7 @@
 [merge]
     tool = meld
     conflictstyle = diff3
+[diff]
+    tool = meld
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
