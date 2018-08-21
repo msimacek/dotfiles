@@ -94,10 +94,11 @@ PURPLE='\[\033[01;35m\]'
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
-_GIT_STATUS='$(es=$?;__git_ps1|sed "s/ \(.\+\)/\1 /";exit $es)'
-_RETVAL='$(es=$?; test $es -ne 0 && echo "$es ")'
-_VENV='$(es=$?;echo "${VIRTUAL_ENV+venv:$(basename "$VIRTUAL_ENV") }";exit $es)'
-PS1="${GREEN}\u ${BLUE}\w ${PURPLE}${_VENV}${YELLOW}${_GIT_STATUS}${RED}${_RETVAL}${BLUE}\$\[\033[00m\] "
+_GIT_STATUS='$(__git_ps1|sed "s/ \(.\+\)/\1 /")'
+_RETVAL='$(test $es -ne 0 && echo "$es ")'
+_VENV='${VIRTUAL_ENV+venv:$(basename "$VIRTUAL_ENV") }'
+_PS1="${GREEN}\u ${BLUE}\w ${PURPLE}${_VENV}${YELLOW}${_GIT_STATUS}${RED}${_RETVAL}${BLUE}\$"
+PS1='$(es=$?;echo "'"$_PS1"'\[\033[00m\] ")'
 
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh|head -n1)"
 export GTK_IM_MODULE=ibus
