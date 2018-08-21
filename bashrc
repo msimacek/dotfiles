@@ -96,9 +96,11 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 _GIT_STATUS='$(es=$?;__git_ps1|sed "s/ \(.\+\)/\1 /";exit $es)'
 _RETVAL='$(es=$?; test $es -ne 0 && echo "$es ")'
-PS1="${GREEN}\u ${BLUE}\w ${YELLOW}${_GIT_STATUS}${RED}${_RETVAL}${BLUE}\$\[\033[00m\] "
+_VENV='$(es=$?;echo "${VIRTUAL_ENV+venv:$(basename "$VIRTUAL_ENV") }";exit $es)'
+PS1="${GREEN}\u ${BLUE}\w ${PURPLE}${_VENV}${YELLOW}${_GIT_STATUS}${RED}${_RETVAL}${BLUE}\$\[\033[00m\] "
 
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh|head -n1)"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS="@im=ibus"
 export QT_IM_MODULE=ibus
+export VIRTUAL_ENV_DISABLE_PROMPT=1
