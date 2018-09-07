@@ -269,7 +269,7 @@ au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-au BufRead,BufNewFile *.yml,*.yaml setlocal filetype=ansible indentexpr= nofoldenable
+au BufRead,BufNewFile *.yml,*.yaml setlocal filetype=ansible nofoldenable
 au BufRead,BufNewFile *.xml,*.html setlocal sw=2
 
 " ag
