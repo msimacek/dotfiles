@@ -15,3 +15,5 @@ build
 *.dbm*
 *.tar*
 *.zip
+*.min.js
+*.pack.js
