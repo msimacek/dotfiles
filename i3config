@@ -27,8 +27,8 @@ font xft:DejaVu Sans Mono 9.5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256cc -cd "$(i3cwd.py)"
-bindsym $mod+Shift+Return exec bash -c 'cd "$(i3cwd.py)" && qgit'
+bindsym $mod+Return exec urxvt256cc -ls -cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)"
+bindsym $mod+Shift+Return exec zsh -c 'cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)" && qgit'
 
 # kill focused window
 bindsym $mod+q kill
