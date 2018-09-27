@@ -75,10 +75,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-# bindkey "${terminfo[khome]}" beginning-of-line
-# bindkey "${terminfo[kend]}" end-of-line
-
 setopt inc_append_history
+
+autoload -U select-word-style
+select-word-style whitespace
 
 export PATH="$HOME/bin:$HOME/git/my-scripts/bin:$PATH"
 export PYTHONPATH="$HOME/lib:$HOME/git/my-scripts/lib:$PYTHONPATH"
