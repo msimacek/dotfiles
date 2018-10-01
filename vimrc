@@ -108,6 +108,9 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " no highlight
 nnoremap <Space> :noh\|echo<CR>
 
+" close quickfix
+nnoremap <Backspace> :cclose<CR>
+
 " surround word with S
 nmap S ysiw
 
