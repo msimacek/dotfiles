@@ -2,8 +2,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-export PATH="$HOME/bin:$HOME/git/my-scripts/bin:$HOME/.local/bin:$PATH"
-
 ZSH_THEME="robbyrussell"
 
 # Completion options
@@ -80,25 +78,8 @@ setopt inc_append_history
 autoload -U select-word-style
 select-word-style whitespace
 
-export PATH="$HOME/bin:$HOME/git/my-scripts/bin:$PATH"
-export PYTHONPATH="$HOME/lib:$HOME/git/my-scripts/lib:$PYTHONPATH"
-export REQUESTS_CA_BUNDLE="/etc/pki/tls/certs/ca-bundle.crt"
-export KOSCHEI_CONFIG="$HOME/git/koschei/config.cfg.template:$HOME/git/koschei/aux/test-config.cfg:$HOME/git/koschei/config.cfg"
-export PGDATABASE=pelc
-export DE="mate" # for xdg-open
-export NAME="Michael Simacek"
-export FASNAME="msimacek"
-export EMAIL="msimacek@redhat.com"
-export RPM_PACKAGER="$NAME <$EMAIL>"
-export EDITOR="vim"
-export VISUAL="vim"
-export PAGER="less -SR"
-export PYTHONDONTWRITEBYTECODE=1
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# other ENVs are in zshenv
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh 2> /dev/null | head -n1)"
-export GTK_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
-export QT_IM_MODULE=ibus
 
 alias gco='git checkout'
 
