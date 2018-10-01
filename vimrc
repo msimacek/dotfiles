@@ -28,6 +28,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'rhysd/vim-gfm-syntax'
+Plugin 'pbogut/fzf-mru.vim'
 
 " theme
 Plugin 'freeo/vim-kalisi'
@@ -279,6 +280,8 @@ if executable('ag')
 endif
 
 nnoremap <C-p> :FZF<CR>
+let g:fzf_mru_relative = 1
+nnoremap <C-n> :FZFMru<CR>
 
 " NEDRTree
 nnoremap <F2> :NERDTree<CR>
