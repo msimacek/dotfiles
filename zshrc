@@ -77,6 +77,7 @@ setopt inc_append_history
 
 autoload -U select-word-style
 select-word-style whitespace
+bindkey "^[^?" vi-backward-kill-word
 
 # other ENVs are in zshenv
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh 2> /dev/null | head -n1)"
