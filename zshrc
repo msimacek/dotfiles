@@ -103,6 +103,22 @@ function _virtualenv_status() {
     echo "%F{35}${VIRTUAL_ENV+venv:$(basename "$VIRTUAL_ENV") }"
 }
 
+function virtualenv_auto_activate() {
+    if [ -z "$VIRTUAL_ENV" ]; then
+        local TOPLEVEL="$(git rev-parse --show-toplevel 2>/dev/null)"
+        TOPLEVEL="${TOPLEVEL:-$PWD}"
+        local ENV_NAME="$(basename "$TOPLEVEL")"
+        if [ -d "$HOME/.virtualenvs/$ENV_NAME" ]; then
+            workon "$ENV_NAME"
+        fi
+    fi
+}
+
+function cd() {
+    builtin cd "$@"
+    virtualenv_auto_activate
+}
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{yellow}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%B%F{yellow}) "
@@ -117,3 +133,5 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%B%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%B%F{green}%{✔%G%}"
 export PROMPT='%B%F{green}%n %F{blue}%~ $(_virtualenv_status)$(git_super_status)%F{red}%F{blue}%#%b%f '
 unset RPROMPT
+
+virtualenv_auto_activate
