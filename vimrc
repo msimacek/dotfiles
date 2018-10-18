@@ -270,6 +270,9 @@ au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
             \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+\\\\|^\\s*\\*\\+\\s\\+
             \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
+au BufRead,BufNewFile Jenkinsfile setlocal filetype=groovy
+au FileType groovy setlocal indentkeys=
+
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
