@@ -74,6 +74,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 setopt inc_append_history
+unsetopt share_history
+
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+unsetopt correct_all
 
 autoload -U select-word-style
 select-word-style whitespace
