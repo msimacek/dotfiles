@@ -85,6 +85,10 @@ autoload -U select-word-style
 select-word-style whitespace
 bindkey "^[^?" vi-backward-kill-word
 
+zle -C complete-file menu-expand-or-complete _generic
+zstyle ':completion:complete-file:*' completer _files
+bindkey '^[/'      complete-file
+
 # other ENVs are in zshenv
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh 2> /dev/null | head -n1)"
 
