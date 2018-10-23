@@ -118,6 +118,9 @@ function virtualenv_auto_activate() {
         local TOPLEVEL="$(git rev-parse --show-toplevel 2>/dev/null)"
         TOPLEVEL="${TOPLEVEL:-$PWD}"
         local ENV_NAME="$(basename "$TOPLEVEL")"
+        if [ -f "$TOPLEVEL/.venv" ]; then
+            ENV_NAME="$(cat "$TOPLEVEL/.venv")"
+        fi
         if [ -d "$HOME/.virtualenvs/$ENV_NAME" ]; then
             workon "$ENV_NAME"
         fi
