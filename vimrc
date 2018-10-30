@@ -58,9 +58,6 @@ colorscheme kalisi
 set background=dark
 set t_Co=256
 
-" disable autoreindenting when typing
-set indentkeys=
-
 " load project local settings
 set exrc
 set secure
@@ -137,6 +134,9 @@ set ve=all
 
 " paste mode (no autoindent)
 set pastetoggle=<F11>
+
+" disable autoreindenting when typing
+au FileType * setlocal indentkeys-=<:>
 
 " airline
 set laststatus=2
@@ -258,7 +258,6 @@ au BufRead,BufNewFile *.spec
 " do not continue comments, but format them
 au BufRead,BufNewFile * setlocal formatoptions=qn1j
 au FileType c,cpp setlocal comments-=:// comments+=f:// formatoptions+=c
-au FileType python setlocal indentkeys-=<:>
 au FileType ruby,eruby setlocal sw=2
 
 autocmd BufRead,BufNewFile *.tex
@@ -271,7 +270,6 @@ au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
             \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
 au BufRead,BufNewFile Jenkinsfile setlocal filetype=groovy
-au FileType groovy setlocal indentkeys=
 
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
