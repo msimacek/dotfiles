@@ -136,7 +136,7 @@ set ve=all
 set pastetoggle=<F11>
 
 " disable autoreindenting when typing
-au FileType * setlocal indentkeys-=<:>
+au FileType * setlocal indentkeys-=<:>,-
 
 " airline
 set laststatus=2
