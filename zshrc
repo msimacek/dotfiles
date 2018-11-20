@@ -80,6 +80,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 
 unsetopt correct_all
+setopt rm_star_silent
 
 autoload -U select-word-style
 select-word-style whitespace
