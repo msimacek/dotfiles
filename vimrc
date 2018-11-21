@@ -264,6 +264,8 @@ au FileType ruby,eruby setlocal sw=2
 autocmd BufRead,BufNewFile *.tex
     \ setlocal filetype=tex wrap formatoptions+=tc indentkeys=
 
+autocmd BufRead,BufNewFile Dockerfile.* setlocal filetype=dockerfile
+
 " asciidoc highlighting, indent
 au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
             \ shiftwidth=2 wrap formatoptions+=tc
