@@ -145,7 +145,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%B%{↓%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%B%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%B%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%B%F{green}%{✔%G%}"
-export PROMPT='%B%F{green}%n %F{blue}%~ $(_virtualenv_status)$(git_super_status)%F{red}%F{blue}%#%b%f '
+export PROMPT='%B%F{green}%n %F{blue}%~ $(_virtualenv_status)$(git_super_status)%F{red}%(?..[%?] )%F{blue}%#%b%f '
 unset RPROMPT
 
 virtualenv_auto_activate
