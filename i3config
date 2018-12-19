@@ -235,6 +235,7 @@ bindsym $mod+F1 exec --no-startup-id ibus engine xkb:us::eng
 bindsym $mod+F2 exec --no-startup-id ibus engine kkc
 bindsym $mod+F3 exec --no-startup-id ibus engine xkb:cz:qwerty:cze
 bindsym $mod+F4 exec --no-startup-id ibus engine xkb:fi::fin
+bindsym $mod+F5 exec --no-startup-id ibus engine libpinyin
 
 #exec --no-startup-id xsetroot -solid '#004422'
 # executes compton and sets background
