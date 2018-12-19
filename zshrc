@@ -122,7 +122,7 @@ function virtualenv_auto_activate() {
         if [ -f "$TOPLEVEL/.venv" ]; then
             ENV_NAME="$(cat "$TOPLEVEL/.venv")"
         fi
-        if [ -d "$HOME/.virtualenvs/$ENV_NAME" ]; then
+        if [ "$ENV_NAME" != / -a -d "$HOME/.virtualenvs/$ENV_NAME" ]; then
             workon "$ENV_NAME"
         fi
     fi
