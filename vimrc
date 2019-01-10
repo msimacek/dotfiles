@@ -30,6 +30,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'rhysd/vim-gfm-syntax'
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'vim-scripts/groovyindent-unix'
+Plugin 'vim-scripts/groovy'
 
 " theme
 Plugin 'freeo/vim-kalisi'
@@ -138,6 +139,7 @@ set pastetoggle=<F11>
 
 " disable autoreindenting when typing
 au FileType * setlocal indentkeys-=<:>,-
+au FileType groovy setlocal indentkeys=0{,0},!^F,o,O,e
 
 " airline
 set laststatus=2
