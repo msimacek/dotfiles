@@ -27,7 +27,7 @@ font xft:DejaVu Sans Mono 9.5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256cc -ls -cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)"
+bindsym $mod+Return exec urxvt256c -ls -cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)"
 bindsym $mod+Shift+Return exec zsh -c 'cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)" && qgit'
 
 # kill focused window
@@ -252,5 +252,4 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xkbset -a
 exec --no-startup-id ibus-daemon --xim -d
 exec --no-startup-id dropbox start
-exec --no-startup-id urxvt256cd -q
 exec --no-startup-id pasystray
