@@ -82,6 +82,9 @@ SAVEHIST=10000000
 unsetopt correct_all
 setopt rm_star_silent
 
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+
 autoload -U select-word-style
 select-word-style whitespace
 bindkey "^[^?" vi-backward-kill-word
