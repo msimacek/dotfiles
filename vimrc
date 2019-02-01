@@ -255,11 +255,12 @@ inoremap <F4> <C-R>=strftime("%F")<CR>
 " customize autocomplete
 set completeopt=longest,menuone,preview
 
+" do not continue comments, but format them
+set formatoptions=qn1j
+
 au BufRead,BufNewFile *.spec
     \ setlocal comments-=:% commentstring=#%s
 
-" do not continue comments, but format them
-au BufRead,BufNewFile * setlocal formatoptions=qn1j
 au FileType c,cpp setlocal comments-=:// comments+=f:// formatoptions+=c
 au FileType ruby,eruby setlocal sw=2
 
@@ -274,7 +275,7 @@ au FileType asciidoc setlocal autoindent expandtab tabstop=8 softtabstop=2
             \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+\\\\|^\\s*\\*\\+\\s\\+
             \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
-au BufRead,BufNewFile Jenkinsfile setlocal filetype=groovy
+au BufRead,BufNewFile Jenkinsfile* setlocal filetype=groovy
 
 " autoclose fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
