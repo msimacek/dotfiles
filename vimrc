@@ -30,7 +30,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'rhysd/vim-gfm-syntax'
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'vim-scripts/groovyindent-unix'
-Plugin 'vim-scripts/groovy'
 
 " theme
 Plugin 'freeo/vim-kalisi'
