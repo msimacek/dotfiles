@@ -1,0 +1,4 @@
+hooks:
+    prior_switch: /usr/bin/killall compton
+    post_switch: compton -b --vsync opengl-swc --backend glx; /usr/bin/notify-send -u low "randrctl" "Switched to $randr_profile"
+    post_fail: /usr/bin/notify-send -u critical "randrctl error" "$randr_error"

@@ -241,7 +241,8 @@ bindsym $mod+F5 exec --no-startup-id ibus engine libpinyin
 
 #exec --no-startup-id xsetroot -solid '#004422'
 # executes compton and sets background
-exec_always --no-startup-id xrandr --auto
+exec_always --no-startup-id randrctl auto
+exec --no-startup-id _udev-randrctl.py
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
