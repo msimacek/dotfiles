@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Completion options
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 
 # DISABLE_AUTO_UPDATE="true"
@@ -92,6 +92,7 @@ bindkey "^[^?" vi-backward-kill-word
 zle -C complete-file menu-expand-or-complete _generic
 zstyle ':completion:complete-file:*' completer _files
 bindkey '^[/'      complete-file
+zstyle ':completion:*' rehash true
 
 # other ENVs are in zshenv
 export SSH_AUTH_SOCK="$(ls --sort time /run/user/`id -u`/keyring*/ssh 2> /dev/null | head -n1)"

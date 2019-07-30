@@ -25,7 +25,6 @@
         nope = reset --hard
         pop = stash pop
         puf = push --force-with-lease
-        pug = push origin HEAD:refs/for/develop
         ss = stash show -v
         m = mergetool
 [format]

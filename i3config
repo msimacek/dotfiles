@@ -223,6 +223,7 @@ bindsym $mod+Shift+a exec --no-startup-id xrandr --auto
 
 # screenshot
 bindsym --release $mod+Shift+Print exec scrot -s
+bindsym --release $alt+Shift+Print exec scrot
 
 for_window [class="^.*"] border normal
 #for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
