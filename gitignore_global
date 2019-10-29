@@ -18,3 +18,4 @@ build
 *.min.js
 *.pack.js
 .venv
+.idea
