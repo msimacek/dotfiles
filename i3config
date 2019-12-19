@@ -181,8 +181,8 @@ bindsym $mod+Escape exec xset s activate
 bindsym XF86AudioLowerVolume exec --no-startup-id _volume_dn.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id _volume_up.sh
 bindsym XF86AudioMute exec --no-startup-id _mute.sh
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 bind 156 exec --no-startup-id xbacklight -set 75
 bind $mod+Shift+156 exec --no-startup-id xbacklight -set 0
 bind $mod+156 exec --no-startup-id xbacklight -set 100
