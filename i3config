@@ -27,8 +27,8 @@ font xft:DejaVu Sans Mono 9.5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256c -ls -cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)"
-bindsym $mod+Shift+Return exec zsh -c 'cd "$(/home/msimacek/git/my-scripts/bin/i3cwd.py)" && qgit'
+bindsym $mod+Return exec urxvt256c-ml -ls -cd "$(i3cwd.py)"
+bindsym $mod+Shift+Return exec zsh -c 'cd "$(i3cwd.py)" && qgit'
 
 # kill focused window
 bindsym $mod+q kill
@@ -245,6 +245,7 @@ bindsym $mod+F5 exec --no-startup-id ibus engine libpinyin
 exec_always --no-startup-id randrctl auto
 exec --no-startup-id _udev-randrctl.py
 exec --no-startup-id gnome-keyring-daemon
+exec --no-startup-id /usr/libexec/mate-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
